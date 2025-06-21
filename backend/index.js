@@ -14,10 +14,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://unichat-app-n7nx.onrender.com"
+];
+
 app.use(cors({
-    origin: "https://unichat-app-n7nx.onrender.com",
-    credentials:true,
-}))
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("❌ Not allowed by CORS: " + origin));
+    }
+  },
+  credentials: true
+}));
+
 app.use("/api/auth",authRouter);
 app.use("/api/user",userRouter);
 app.use("/api/message",messageRouter);
