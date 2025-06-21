@@ -1,5 +1,5 @@
 import React from 'react';
-import SideBar from '../components/Sidebar';
+import SideBar from '../components/SideBar';
 import MessageArea from '../components/MessageArea';
 import getMessages from '../customHooks/useMessages';
 
