@@ -4,6 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { BiLogOutCircle } from "react-icons/bi";
 import { FaGlobe } from "react-icons/fa"; // 🌐 ChatBox Icon
+import { BsHeartFill } from "react-icons/bs"; // ❤️ LifeLink Icon
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -94,7 +95,7 @@ function SideBar() {
           </div>
         </div>
 
-        {/* Search & ChatBox Icon */}
+        {/* Search & ChatBox + LifeLink Icons */}
         <div className='relative z-20 w-full flex items-center gap-4'>
           {search ? (
             <div className='relative w-full'>
@@ -148,13 +149,22 @@ function SideBar() {
                 <IoIosSearch className='w-[22px] h-[22px]' />
               </div>
 
-              {/* 🌐 ChatBox Link - same tab */}
+              {/* 🌐 ChatBox */}
               <div
                 className='w-[45px] h-[45px] rounded-full flex justify-center items-center bg-white shadow-md cursor-pointer'
                 title="Go to ChatBox"
-                onClick={() => window.location.href = "https://chatbox-mongodb-expressjs-dz1y.onrender.com"} // ✅ same tab
+                onClick={() => window.location.href = "https://chatbox-mongodb-expressjs-dz1y.onrender.com"}
               >
                 <FaGlobe className='w-[22px] h-[22px] text-blue-500' />
+              </div>
+
+              {/* ❤️ LifeLink */}
+              <div
+                className='w-[45px] h-[45px] rounded-full flex justify-center items-center bg-white shadow-md cursor-pointer'
+                title="Go to LifeLink"
+                onClick={() => window.location.href = "https://lifelink-1-kip8.onrender.com"}
+              >
+                <BsHeartFill className='w-[20px] h-[20px] text-pink-500' />
               </div>
             </div>
           )}
@@ -203,3 +213,4 @@ function SideBar() {
 }
 
 export default SideBar;
+
