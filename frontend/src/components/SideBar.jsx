@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IoIosSearch } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { BiLogOutCircle } from "react-icons/bi";
-import { FaGlobe } from "react-icons/fa"; // 🌐 ChatBox Icon
+import { FaGlobe, FaVideo } from "react-icons/fa"; // 🌐 ChatBox + 📹 UniMeet icons
 import { BsHeartFill } from "react-icons/bs"; // ❤️ LifeLink Icon
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -156,6 +156,15 @@ function SideBar() {
                 onClick={() => window.location.href = "https://chatbox-mongodb-expressjs-dz1y.onrender.com"}
               >
                 <FaGlobe className='w-[22px] h-[22px] text-blue-500' />
+              </div>
+
+              {/* 📹 UniMeet */}
+              <div
+                className='w-[45px] h-[45px] rounded-full flex justify-center items-center bg-white shadow-md cursor-pointer'
+                title="Go to UniMeet"
+                onClick={() => window.location.href = "https://unimeet-vwm9.onrender.com"}
+              >
+                <FaVideo className='w-[22px] h-[22px] text-indigo-500' />
               </div>
 
               {/* ❤️ LifeLink */}
